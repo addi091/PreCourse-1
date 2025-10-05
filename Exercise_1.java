@@ -4,21 +4,22 @@ class Stack {
 	// Time Complexity : O(1)
 	// Space Complexity : O(1)
 	// Did this code successfully run on Leetcode :
-	// Any problem you faced while coding this : while push , was using for loop and then incrementing the top, then thought directly top should be considered as index
+	// Any problem you faced while coding this : 
     static final int MAX = 1000; 
     int top; 
-    int a[] = new int[MAX]; // Maximum size of Stack 
+    int a[]; 
   
     boolean isEmpty() 
     { 
         //Write your code here 
-    	return (top == -1) ? true : false;
+    	return top == -1;
     } 
 
     Stack() 
     { 
         //Initialize your constructor 
     	this.top = -1;
+    	a = new int[MAX]; // Maximum size of Stack 
     } 
   
     boolean push(int x) 

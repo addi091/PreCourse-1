@@ -22,7 +22,7 @@
     public boolean isEmpty() 
     { 
         //Write your code here for the condition if stack is empty. 
-    	return (root == null) ? true : false;
+    	return root == null;
     } 
   
     public void push(int data) 
@@ -38,16 +38,19 @@
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
 	//Also return the popped element 
+    	try {
     	if (isEmpty()) {
             System.out.println("Stack Underflow");
-            return -1;
+            throw new Exception("Stack Underflow");
         }
+    	} catch(Exception e) {
+    		System.out.println("Error Stack Underflow");
+    	}
 
     	StackNode temp = root;
         root = root.next;
         int val = temp.data;
 
-        temp = null; 
         return val;
     } 
   
